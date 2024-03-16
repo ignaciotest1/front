@@ -5,13 +5,14 @@
 @layer components {
   .background {
     padding: 6px 10px;
-    background-color: white;
+    background-color: #fff;
     border-radius: 20px;
   }
 }
 
-body{
-  background-image: url("../../public/images/background.png");
+body {
+  background-image: url("../../public/imgs/background.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #151922;
 }
