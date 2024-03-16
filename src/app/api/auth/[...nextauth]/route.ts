@@ -34,7 +34,11 @@ const handler = NextAuth({
           });
 
           if (res.ok) {
-            await axios.post(`http://localhost:3000/api/send-mail`, { name });
+            await axios.post(`http://localhost:3000/api/send-mail`, {
+              name,
+              email,
+            });
+            await axios.post(`http://localhost:3000/api/send-mail-admin`);
             return user;
           }
         }

@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import { Providers } from "./providers";
-import { useSession } from "next-auth/react";
-import Loader from "@/components/Loader/Loader";
+import RoutesProtect from "./routeprotect";
 
 export const metadata: Metadata = {
   title: "Create Next App",
