@@ -2,6 +2,7 @@
 import Loader from "@/components/Loader/Loader";
 import axios from "axios";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 
 export default function Home() {
   const { data: session } = useSession();
@@ -25,11 +26,19 @@ export default function Home() {
       ) : (
         <>
           <div className="background">
-            {session.user.status !== "approved" ? (
+            {session.user?.status !== "approved" ? (
               <h2>No has sido aceptado</h2>
             ) : (
               <h2>Bienvenido</h2>
             )}
+          </div>
+
+          <div className="w-full h-full flex gap-4 justify-center">
+            <Link href={"/modulos"}>
+              <button className="inline-block bg-violet-400 py-2 px-4 text-white rounded-3xl hover:bg-violet-500 transition duration-500 ease-in-out transform hover:scale-105 ">
+                Módulos
+              </button>
+            </Link>
           </div>
           <div
             onClick={() => handleSubmit()}

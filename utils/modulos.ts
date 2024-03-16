@@ -1,21 +1,55 @@
 export const modulos = [
   {
-    link: "modulo-1",
-    name: "Modulo 1",
+    link: "traiding",
+    name: "Curso de Traiding",
     classes: [
       {
+        id:'1',
         name: "1 Bienvenidos a la mentoria",
-        src: "/videos/class-1",
+        src: "/videos/class-1.mp4",
+        video:true,
+      },{
+        id:'2',
+        name: "2 Bienvenidos a la mentoria",
+        src: "/videos/class-1.mp4",
+        video:true,
+      },{
+        id:'3',
+        name: "3 Bienvenidos a la mentoria",
+        src: "/videos/class-1.mp4",
+        video:true,
+      },{
+        id:'4',
+        name: "4 Bienvenidos a la mentoria",
+        src: "/videos/class-1.mp4",
+        video:true,
       },
     ],
   },
   {
-    link: "modulo-2",
-    name: "Modulo 2",
+    link: "shopify",
+    name: "Curso de Shopify",
     classes: [
       {
-        name: "2 Bienvenidos a la mentoria",
-        src: "/videos/class-1",
+        id:'1',
+        name: "1 Bienvenidos a la mentoria",
+        src: "/videos/class-1.mp4",
+        video:true,
+      },{
+        id:'2',
+        name: "2 Reglas del juego",
+        src: "/videos/class-1.mp4",
+        video:false,
+      },{
+        id:'3',
+        name: "3 Marca y dominio",
+        src: "/videos/class-1.mp4",
+        video:true,
+      },{
+        id:'4',
+        name: "4 Configurando Shopify",
+        src: "/videos/class-1.mp4",
+        video:true,
       },
     ],
   },
@@ -25,7 +59,7 @@ export const modulos = [
     classes: [
       {
         name: "3 Bienvenidos a la mentoria",
-        src: "/videos/class-1",
+        src: "/videos/class-1.mp4",
       },
     ],
   },
@@ -35,8 +69,52 @@ export const modulos = [
     classes: [
       {
         name: "4 Bienvenidos a la mentoria",
-        src: "/videos/class-1",
+        src: "/videos/class-1.mp4",
       },
     ],
   },
 ];
+
+
+// export const modulos = [
+//   {
+//     link: "modulo-1",
+//     name: "Modulo 1",
+//     classes: [
+//       {
+//         name: "1 Bienvenidos a la mentoria",
+//         src: "/videos/class-1.mp4",
+//       },
+//     ],
+//   },
+//   {
+//     link: "modulo-2",
+//     name: "Modulo 2",
+//     classes: [
+//       {
+//         name: "2 Bienvenidos a la mentoria",
+//         src: "/videos/class-1.mp4",
+//       },
+//     ],
+//   },
+//   {
+//     link: "modulo-3",
+//     name: "Modulo 3",
+//     classes: [
+//       {
+//         name: "3 Bienvenidos a la mentoria",
+//         src: "/videos/class-1.mp4",
+//       },
+//     ],
+//   },
+//   {
+//     link: "modulo-4",
+//     name: "Modulo 4",
+//     classes: [
+//       {
+//         name: "4 Bienvenidos a la mentoria",
+//         src: "/videos/class-1.mp4",
+//       },
+//     ],
+//   },
+// ];
