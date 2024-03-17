@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <Providers>
-        <body className="max-w-[1200px] mx-auto px-4">
+        <body className="max-w-[1200px] grid grid-cols-1 grid-rows-[auto,auto,1fr,auto] min-h-screen mx-auto px-4">
           <Header />
           <Breadcrumbs />
           <main className="py-8">{children}</main>

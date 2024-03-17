@@ -9,7 +9,7 @@ const Modulos = () => {
   // const { data: session } = useSession();
 
   return (
-    <section className="w-full  h-full min-h-[500px] flex flex-col justify-start  text-white gap-5">
+    <section className="w-full  h-full flex flex-col justify-start  text-white gap-5">
       {/* <h1> Bienvenido {session?.user ? session.user.name : "Usuario"}</h1> */}
       <div className="flex flex-wrap gap-6">
         {modulos.map((modulo, i) => (

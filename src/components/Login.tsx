@@ -21,17 +21,19 @@ const Login = () => {
                 </Link>
               </div>
             )}
-            <div className="flex flex-col ">
-              <h5 className="capitalize font-medium">{session.user.name}</h5>
-              <p>{session.user.email}</p>
+            <div className="flex flex-row gap-5 items-center bg-white rounded-xl pl-6 pr-2 py-1">
+              <div className="flex flex-col ">
+                <h5 className="capitalize font-medium">{session.user.name}</h5>
+                <p>{session.user.email}</p>
+              </div>
+              <Image
+                src={session.user.image as string}
+                width={24}
+                height={24}
+                alt={session.user.name as string}
+                className="w-10 h-10 rounded-full"
+              />
             </div>
-            <Image
-              src={session.user.image as string}
-              width={24}
-              height={24}
-              alt={session.user.name as string}
-              className="w-10 h-10 rounded-full"
-            />
           </div>
         </Link>
       ) : (

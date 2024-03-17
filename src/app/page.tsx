@@ -21,12 +21,15 @@ export default function Home() {
 
   return (
     <ProtectedRoute requiresAuth={false}>
-      <section className="flex min-h-screen text-black flex-col items-center justify-start p-24">
+      <section className="flex text-black flex-col items-center justify-start p-24">
         <div className="flex flex-col items-center justify-center gap-5">
-          <h1 className="background w-full text-3xl text-center px-4">
-            Bienvenidos a Diamond Academy
+          <h1 className="background w-full  text-5xl text-center px-10 flex flex-col gap-5">
+            Bienvenidos a{" "}
+            <span className="text-8xl h-28 bg-gradient-to-r from-blue-600 via-purple-500 to-purple-900 bg-clip-text text-transparent">
+              Diamond Academy
+            </span>
           </h1>
-          <h3 className="background w-full text-base text-center">
+          <h3 className="background w-full text-lg text-center">
             Que estas esperando para dar un salto en tu carrera!
           </h3>
 
