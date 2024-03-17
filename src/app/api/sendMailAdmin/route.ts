@@ -1,13 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { google } from "googleapis";
-import { compileUserTemplate } from "../../../../utils/userMail";
+import { compileAdminTemplate } from "../../../../utils/adminMail";
 
-export async function POST(request: NextRequest) {
+export async function POST() {
   try {
-    console.log(["llegue"]);
-    const { user, email } = await request.json();
-
+    console.log("llegue 1");
     const oAuth2Client = new google.auth.OAuth2(
       process.env.GOOGLE_CLIENT_ID,
       process.env.GOOGLE_CLIENT_SECRET,
@@ -17,8 +15,10 @@ export async function POST(request: NextRequest) {
     oAuth2Client.setCredentials({
       refresh_token: process.env.REFRESH_TOKEN,
     });
+    console.log("llegue 2");
 
     const accessTokenResponse = await oAuth2Client.getAccessToken();
+    console.log(accessTokenResponse);
     const accessToken = accessTokenResponse?.token;
 
     const transport = nodemailer.createTransport({
@@ -36,15 +36,16 @@ export async function POST(request: NextRequest) {
 
     const mailOptions = {
       from: "ignaciofronttest@gmail.com",
-      to: email,
-      subject: "Bienvenido a Diamon Academy",
-      html: compileUserTemplate(user),
+      to: "juansegundomartinez7@gmail.com",
+      subject: "Nuevo ingreso en Diamond Academy",
+      html: `<h2>Hola Juan</h2>`,
     };
-    console.log("llegue 2");
+
+    console.log("llegue 4");
 
     await transport.sendMail(mailOptions);
 
-    console.log("llegue 3");
+    console.log("llegue 5");
 
     return NextResponse.json(
       { message: "Email Sent Successfully" },
