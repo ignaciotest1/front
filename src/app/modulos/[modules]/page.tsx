@@ -14,7 +14,7 @@ const ModulesPage = ({ params }: { params: { modules: string } }) => {
         <span className="font-normal capitalize">{params.modules}</span>
       </h2>
       <h3 className="my-2">Clases:</h3>
-      <main className="flex flex-wrap gap-5 py-5justify-center">
+      <main className="flex flex-wrap gap-5 py-5 mx-auto ">
         {classes.map((res) => (
           <Link
             key={res.name}

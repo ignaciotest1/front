@@ -9,7 +9,13 @@ const Header = () => {
       <nav className="w-full flex justify-between">
         <Link href="/">
           <div className="background w-full">
-            <Image src="/imgs/logo.png" alt="logo" width={80} height={80} className="b" />
+            <Image
+              src="/imgs/logo.png"
+              alt="logo"
+              width={80}
+              height={80}
+              className="b"
+            />
           </div>
         </Link>
         <Login />
