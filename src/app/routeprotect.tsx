@@ -35,7 +35,7 @@ const ProtectedRoute = ({ children, requiresAuth, profile }: IProtect) => {
     !profile &&
     session.user.status !== "approved"
   ) {
-    router.replace("/no-authenticated");
+    router.replace("/no-disponible");
     return (
       <section className="w-full h-full flex flex-col items-center justify-center p-24">
         <Loader />
