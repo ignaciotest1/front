@@ -3,6 +3,7 @@ import Loader from "@/components/Loader/Loader";
 import axios from "axios";
 import { getSession, signIn, useSession } from "next-auth/react";
 import ProtectedRoute from "./routeprotect";
+import Link from "next/link";
 
 export default function Home() {
   const { data: session } = useSession();
@@ -35,26 +36,15 @@ export default function Home() {
           >
             Ingresar
           </button>
-          <div
-            onClick={() => handleSubmit()}
-            className="cursor-pointer bg-slate-500 w-[120px] rounded-lg flex justify-center items-center"
-          >
-            Test
+
+          <div className="w-full h-full flex gap-4 justify-center">
+            <Link href={"/modulos"}>
+              <button className="inline-block bg-violet-400 py-2 px-4 text-white rounded-3xl hover:bg-violet-500 transition duration-500 ease-in-out transform hover:scale-105 ">
+                Módulos
+              </button>
+            </Link>
           </div>
         </div>
-        {/* {!session ? (
-        <Loader />
-        ) : (
-          <>
-          <div className="background">
-          {session.user.status !== "approved" ? (
-            <h2>No has sido aceptado</h2>
-            ) : (
-              <h2>Bienvenido</h2>
-              )}
-              </div>
-              </>
-            )} */}
       </section>
     </ProtectedRoute>
   );

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import { Providers } from "./providers";
-import RoutesProtect from "./routeprotect";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +20,9 @@ export default function RootLayout({
       <Providers>
         <body className="max-w-[1200px] mx-auto">
           <Header />
-          <main>{children}</main>
+          <Breadcrumbs />
+          <main className="py-8">{children}</main>
+          <Footer />
         </body>
       </Providers>
     </html>
