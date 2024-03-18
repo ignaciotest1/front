@@ -38,7 +38,7 @@ export const modulos = [
       },{
         id:'2',
         name: "2 Reglas del juego",
-        src: "/videos/class-1.mp4",
+        src: "/shopify/2-Reglas-del-juego.pdf",
         video:false,
       },{
         id:'3',
@@ -52,6 +52,13 @@ export const modulos = [
         video:true,
       },
     ],
+    complements:[
+      {type:'xlsx', src:'/shopify/complementos/CALCULADORA-DE-PRECIOS.xlsx'},
+      {type:'png', src:'/shopify/complementos/Configurando-shopify-nosotros.png'},
+      {type:'zip', src:'/shopify/complementos/Plantilla-optimizada-Mentoria-configurando-shopify.zip'},
+      {type:'pdf', src:'/shopify/complementos/Politicas-de-la-tienda.pdf'},
+
+    ]
   },
   {
     link: "modulo-3",
