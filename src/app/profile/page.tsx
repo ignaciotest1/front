@@ -6,11 +6,11 @@ import Image from "next/image";
 import Loader from "@/components/Loader/Loader";
 
 const Profile = () => {
-  const { data: session } = useSession();
+  const { data: session }: any = useSession();
 
   return (
     <ProtectedRoute requiresAuth={true} profile={true}>
-      <section className="w-full h-full flex flex-col items-center justify-center p-24">
+      <section className="w-full flex items-center justify-center p-1 sm:px-28">
         <div className="w-full h-full bg-white rounded-xl">
           {!session ? (
             <Loader />
@@ -21,7 +21,7 @@ const Profile = () => {
                 alt="user"
                 width="200"
                 height="200"
-                className="rounded-full object-cover"
+                className="rounded-full object-cover p-8 md:p-2 xl:p-0"
               />
               <div className="flex flex-col items-center justify-center">
                 <p className="text-lg font-bold">Nombre</p>
@@ -41,7 +41,7 @@ const Profile = () => {
               </div>
               <button
                 onClick={() => signOut()}
-                className="w-full bg-black text-white rounded-lg max-w-[120px]"
+                className="w-full px-4 py-2 bg-black text-white rounded-lg max-w-[120px]"
               >
                 Salir
               </button>

@@ -11,10 +11,14 @@ const ClassPage = ({ params }) => {
   const clase = classes.find((clas) => clas.id === idPath);
 
   return (
-    <section className="w-full h-full min-h-[500px] flex flex-col justify-center items-center text-white gap-5">
+    <section className="w-full h-full  flex flex-col justify-center items-center text-white gap-5">
       <section className="w-full h-full flex flex-col justify-center items-center">
-        <div className=" w-[900px]  h-full flex justify-center">
-          {clase.video && <VideoPlayer src={clase.src} />}
+        <div className="w-full h-full flex justify-center">
+          {clase.video ? (
+            <VideoPlayer src={clase.src} />
+          ) : (
+            <iframe src={clase.src} width="100%" height="900px"></iframe>
+          )}
         </div>
       </section>
     </section>

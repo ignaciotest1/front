@@ -1,26 +1,49 @@
 "use client";
-import React, { useState } from "react";
 import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import MenuHamburger from "./MenuHamburger";
 
 const Login = () => {
   const { data: session } = useSession();
+  const admin = true;
 
   return (
     <>
       {session?.user ? (
-        <Link href="/profile">
-          <div>
-            <Image
-              src={session.user.image as string}
-              width={24}
-              height={24}
-              alt={session.user.name as string}
-              className="w-10 h-10 rounded-full"
-            />
+        <>
+          <Link href="/profile" className="hidden md:block">
+            <div className="flex flex-row gap-4 items-center">
+              {admin && (
+                <div className="px-6">
+                  <Link href="/dashboard">
+                    <button className="inline-block w-40 bg-violet-400 py-2 px-5 text-white rounded-xl hover:bg-violet-500 transition duration-500 ease-in-out transform hover:scale-105">
+                      Dashboard
+                    </button>
+                  </Link>
+                </div>
+              )}
+              <div className="flex flex-row gap-5 items-center bg-white rounded-xl pl-6 pr-2 py-1">
+                <div className="flex flex-col ">
+                  <h5 className="capitalize font-medium">
+                    {session.user.name}
+                  </h5>
+                  <p>{session.user.email}</p>
+                </div>
+                <Image
+                  src={session.user.image as string}
+                  width={24}
+                  height={24}
+                  alt={session.user.name as string}
+                  className="w-10 h-10 rounded-full"
+                />
+              </div>
+            </div>
+          </Link>
+          <div className="block md:hidden">
+            <MenuHamburger admin={admin} />
           </div>
-        </Link>
+        </>
       ) : (
         <div onClick={() => signIn()} className="cursor-pointer">
           <svg
