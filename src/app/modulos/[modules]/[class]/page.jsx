@@ -13,7 +13,7 @@ const ClassPage = ({ params }) => {
   return (
     <section className="w-full h-full  flex flex-col justify-center items-center text-white gap-5">
       <section className="w-full h-full flex flex-col justify-center items-center">
-        <div className=" h-full flex justify-center">
+        <div className="w-full h-full flex justify-center">
           {clase.video ? (
             <VideoPlayer src={clase.src} />
           ) : (
