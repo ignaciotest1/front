@@ -12,7 +12,7 @@ const Modulos = () => {
     <ProtectedRoute requiresAuth={true}>
       <section className="w-full  h-full flex flex-col justify-start  text-white gap-5">
         {/* <h1> Bienvenido {session?.user ? session.user.name : "Usuario"}</h1> */}
-        <div className="flex flex-wrap gap-6">
+        <div className="flex flex-wrap gap-6 justify-center sm:justify-start">
           {modulos.map((modulo, i) => (
             <Link href={`/modulos/${modulo.link}`} key={i}>
               <div className="w-56 h-48 text-slate-600  rounded-lg  bg-white hover:bg-slate-100 flex flex-col p-4 sombra transform hover:scale-105 transition duration-500 ease-in-out">

@@ -39,13 +39,13 @@ const UserDashboard = ({ user, key }: Props) => {
         {status === "approved" ? "Aprobado" : "Rechazado"}
       </td>
       <td className=" px-4 py-2">{role === "user" ? "Usuario" : "Admin"}</td>
-      <td className=" px-4 py-2">
+      <td className=" px-4 py-2 flex ">
         <button
           onClick={() => handleAccept(email, "approved")}
           className={`${
             status === "approved"
               ? "bg-green-400 hover:bg-green-600"
-              : "text-green-400 border-green-400 border-2 hover:text-green-700 hover:border-green-700"
+              : "text-green-500 border-green-500 border-2 hover:text-green-700 hover:border-green-700"
           }  text-white font-bold py-2 px-4 mr-2 rounded-2xl transition duration-500 ease-in-out`}
         >
           {status === "approved" ? "Aceptado" : "Aceptar"}
@@ -54,8 +54,8 @@ const UserDashboard = ({ user, key }: Props) => {
           onClick={() => handleAccept(email, "denied")}
           className={`${
             status === "approved"
-              ? "text-red-400 border-red-400 hover:text-red-700 hover:border-red-700 border-2"
-              : "bg-red-400 hover:bg-red-600"
+              ? "text-red-300 border-red-300 hover:text-red-500 hover:border-red-500 border-2"
+              : "bg-red-500 hover:bg-red-600"
           } text-white font-bold py-2 px-4 mr-2 rounded-2xl transition duration-500 ease-in-out`}
         >
           {status === "approved" ? "Rechazar" : "Rechazado"}

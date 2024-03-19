@@ -3,9 +3,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full h-full max-w-[1200px] mx-auto my-4">
-      <div className="py-5 bg-white rounded-3xl flex items-center justify-around">
-        <div className="flex justify-center items-center gap-8">
+    <footer className="w-full max-w-[1200px] mx-auto my-2">
+      <div className="py-5 bg-white rounded-3xl flex items-center justify-around flex-col sm:flex-row gap-8 sm:gap-0">
+        <div className="flex justify-center items-center gap-8 ">
           <button className="transform hover:scale-110 transition duration-500 ease-in-out p-2">
             <Image
               src="/icons/instagram.svg"

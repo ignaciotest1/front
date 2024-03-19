@@ -21,11 +21,11 @@ export default function Home() {
 
   return (
     <ProtectedRoute requiresAuth={false}>
-      <section className="flex text-black flex-col items-center justify-start p-24">
+      <section className="flex h-full text-black flex-col items-center justify-center sm:justify-start sm:p-24">
         <div className="flex flex-col items-center justify-center gap-5">
-          <h1 className="background w-full  text-5xl text-center px-10 flex flex-col gap-5">
+          <h1 className="background w-full py-5 text-2xl sm:text-5xl text-center lg:px-10 flex flex-col gap-5">
             Bienvenidos a{" "}
-            <span className="text-8xl h-28 bg-gradient-to-r from-blue-600 via-purple-500 to-purple-900 bg-clip-text text-transparent">
+            <span className="text-3xl sm:text-8xl text-wrap xl:h-28 bg-gradient-to-r from-blue-600 via-purple-500 to-purple-900 bg-clip-text text-transparent">
               Diamond Academy
             </span>
           </h1>
