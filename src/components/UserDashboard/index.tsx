@@ -44,9 +44,9 @@ const UserDashboard = ({ user, key }: Props) => {
           onClick={() => handleAccept(email, "approved")}
           className={`${
             status === "approved"
-              ? "bg-green-400 hover:bg-green-600"
+              ? "bg-green-400 hover:bg-green-600 text-white"
               : "text-green-500 border-green-500 border-2 hover:text-green-700 hover:border-green-700"
-          }  text-white font-bold py-2 px-4 mr-2 rounded-2xl transition duration-500 ease-in-out`}
+          }   font-bold py-2 px-4 mr-2 rounded-2xl transition duration-500 ease-in-out`}
         >
           {status === "approved" ? "Aceptado" : "Aceptar"}
         </button>
@@ -55,8 +55,8 @@ const UserDashboard = ({ user, key }: Props) => {
           className={`${
             status === "approved"
               ? "text-red-300 border-red-300 hover:text-red-500 hover:border-red-500 border-2"
-              : "bg-red-500 hover:bg-red-600"
-          } text-white font-bold py-2 px-4 mr-2 rounded-2xl transition duration-500 ease-in-out`}
+              : "bg-red-500 hover:bg-red-600 text-white"
+          }  font-bold py-2 px-4 mr-2 rounded-2xl transition duration-500 ease-in-out`}
         >
           {status === "approved" ? "Rechazar" : "Rechazado"}
         </button>

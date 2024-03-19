@@ -16,7 +16,7 @@ const Dashboard = () => {
 
   return (
     <ProtectedRoute requiresAuth={true}>
-      <section className="overflow-x-auto bg-white p-5 rounded-3xl">
+      <section className="overflow-x-auto scroll-custom bg-white p-5 rounded-3xl">
         <table className="table-auto min-w-full">
           <thead>
             <tr>

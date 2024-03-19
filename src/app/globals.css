@@ -23,7 +23,11 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
+}
+
+.scroll-custom::-webkit-scrollbar {
+  height: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
