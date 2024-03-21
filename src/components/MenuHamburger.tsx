@@ -12,15 +12,15 @@ const MenuHamburger = ({ admin }: { admin: boolean }) => {
     <nav className="relative">
       <div
         className={`${
-          isOpen ? "bg-gray-800 absolute p-5 -top-5 -right-4 w-screen" : ""
+          isOpen ? "bg-zinc-800 absolute p-5 -top-5 -right-4 w-screen" : ""
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-end h-16">
             <div className="md:hidden">
               <button
                 onClick={toggleMenu}
-                className="inline-flex items-center justify-center p-2 rounded-xl text-slate-600  transition duration-500 ease-in-out"
+                className="inline-flex items-center justify-center rounded-xl text-slate-600  transition duration-500 ease-in-out"
                 aria-expanded="false"
               >
                 <svg
@@ -61,7 +61,7 @@ const MenuHamburger = ({ admin }: { admin: boolean }) => {
         <div
           className={`${
             isOpen ? "absolute" : "hidden"
-          } inset-x-0 bg-gray-800 z-10 p-3 transition-transform transform ease-out duration-500`}
+          } inset-x-0 bg-zinc-800 z-10 p-3 transition-transform transform ease-out duration-500`}
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link

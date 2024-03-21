@@ -12,7 +12,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center gap-5 ">
           <h1 className="background bg-zinc-800 w-full py-8 text-2xl sm:text-5xl text-center lg:px-40 lg:py-12 flex flex-col gap-5">
             Bienvenidos a{" "}
-            <span className="text-9xl sm:text-8xl font-bold">Luxury Gold</span>
+            <span className="text-3xl sm:text-8xl font-bold">Luxury Gold</span>
           </h1>
           <h3 className="background bg-zinc-800 py-4 w-full text-lg text-center">
             Que estas esperando para dar un salto en tu carrera!
