@@ -1,5 +1,5 @@
 import React from "react";
-const Emoji = () => (
+const Emoji = (props: any) => (
   <span
     className="emoji"
     role="img"
