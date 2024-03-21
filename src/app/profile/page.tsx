@@ -11,7 +11,7 @@ const Profile = () => {
   return (
     <ProtectedRoute requiresAuth={true} profile={true}>
       <section className="w-full flex items-center justify-center p-1 sm:px-28">
-        <div className="w-full h-full bg-white rounded-xl">
+        <div className="w-full h-full bg-zinc-800 text-white rounded-xl">
           {!session ? (
             <Loader />
           ) : (
@@ -41,7 +41,7 @@ const Profile = () => {
               </div>
               <button
                 onClick={() => signOut()}
-                className="w-full px-4 py-2 bg-black text-white rounded-lg max-w-[120px]"
+                className="w-full px-4 py-2 bg-black hover:sombraGold transition duration-500 ease-in-out transform hover:scale-105 text-white rounded-lg max-w-[120px]"
               >
                 Salir
               </button>

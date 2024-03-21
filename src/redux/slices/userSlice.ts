@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../store"; // Import RootState type
+import { Dispatch } from "redux";
+import { RootState } from "../store";
 import { User } from "@/types";
 import axios from "axios";
 
@@ -37,7 +38,7 @@ const userSlice = createSlice({
 export const { fetchUsersStart, fetchUsersSuccess, fetchUsersFailure } =
   userSlice.actions;
 
-export const fetchUsersAsync = () => async (dispatch: any) => {
+export const fetchUsersAsync = () => async (dispatch: Dispatch) => {
   try {
     dispatch(fetchUsersStart());
     const { data } = await axios.post("http://localhost:3000/api/getusers");

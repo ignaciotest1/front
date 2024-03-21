@@ -16,10 +16,23 @@ const UserDashboard = ({ user, key }: Props) => {
   const { data: session, update } = useSession();
   const dispatch = useDispatch();
 
-  const handleAccept = async (email: string, status: string) => {
-    await axios.post("/api/status", { email, status });
-    await update({ ...session, user: { ...session?.user } });
-    dispatch(fetchUsersAsync());
+  const handleAccept = async (email: string, status: string, role?: string) => {
+    try {
+      if (role) {
+        const res = await axios.post("/api/status", { email, status, role });
+        await update({ ...session, user: { ...session?.user } });
+        return dispatch(fetchUsersAsync());
+      }
+
+      const res = await axios.post("/api/status", { email, status });
+      await update({ ...session, user: { ...session?.user } });
+      dispatch(fetchUsersAsync());
+      if (res.data.status === "approved") {
+        await axios.post("/api/send-mail-user");
+      }
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
@@ -61,7 +74,7 @@ const UserDashboard = ({ user, key }: Props) => {
           {status === "approved" ? "Rechazar" : "Rechazado"}
         </button>
         <button
-          onClick={() => handleAccept(email, "admin")}
+          onClick={() => handleAccept(email, "approved", "admin")}
           className={`bg-blue-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-2xl transition duration-500 ease-in-out`}
         >
           Admin

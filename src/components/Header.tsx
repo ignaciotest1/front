@@ -8,12 +8,12 @@ const Header = () => {
     <header className="w-full h-full flex flex-col items-center justify-center text-black mx-auto py-3 pb-6 lg:px-0">
       <nav className="w-full flex justify-between">
         <Link href="/">
-          <div className="bg-slate-700 hover:bg-slate-800 px-1 md:py-2 md:px-5 rounded-2xl transition duration-500 ease-in-out w-full">
+          <div className="md:px-1 ">
             <Image
               src="/imgs/logo.png"
               alt="logo"
-              width={80}
-              height={80}
+              width={100}
+              height={100}
               className="b "
             />
           </div>
