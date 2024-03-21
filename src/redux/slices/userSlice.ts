@@ -38,10 +38,12 @@ const userSlice = createSlice({
 export const { fetchUsersStart, fetchUsersSuccess, fetchUsersFailure } =
   userSlice.actions;
 
-export const fetchUsersAsync = ():any => async (dispatch: Dispatch) => {
+export const fetchUsersAsync = (): any => async (dispatch: Dispatch) => {
   try {
     dispatch(fetchUsersStart());
-    const { data } = await axios.post("http://localhost:3000/api/getusers");
+    const { data } = await axios.post(
+      "https://www.luxurygold.click/api/getusers"
+    );
     if (!data) {
       throw new Error("Failed to fetch users");
     }
