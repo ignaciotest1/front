@@ -5,21 +5,20 @@
 @layer components {
   .background {
     padding: 6px 10px;
-    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 3px 1px rgba(255, 255, 255, 0.25);
   }
 
   .sombra {
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px 0px rgba(255, 255, 255, 0.25);
+  }
+  .sombraGold {
+    box-shadow: 0 4px 4px 0px rgb(204, 159, 12);
   }
 }
 
 body {
-  background-image: url("../../public/imgs/background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: transparent;
+  background: #0f0f0f;
 }
 
 ::-webkit-scrollbar {

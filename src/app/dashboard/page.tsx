@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUsers, fetchUsersAsync } from "../../redux/slices/userSlice";
 import { User } from "@/types";
@@ -29,33 +29,23 @@ const Dashboard = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => (
-              <UserDashboard key={user._id!} user={user} />
-            ))}
+            <Suspense
+              fallback={
+                <div className="animate-pulse w-full h-80 bg-gray-300"></div>
+              }
+            >
+              {users.map((user) => (
+                <UserDashboard key={user._id!} user={user} />
+              ))}
+            </Suspense>
           </tbody>
         </table>
+        {!users && (
+          <div className="animate-pulse w-full h-80 bg-gray-300"></div>
+        )}
       </section>
     </ProtectedRoute>
   );
 };
 
 export default Dashboard;
-
-// <section className="flex w-full min-h-screen text-black flex-col items-center justify-between py-24 px-10 lg:px-0">
-//   <div className="rounded-[20px] w-full h-screen bg-white p-6">
-//     {users ? (
-//       users.map((user: User) => (
-//         <UserDashboard
-//           key={user.userId}
-//           image={user.image}
-//           status={user.status}
-//           name={user.name}
-//           email={user.email}
-//           role={user.role}
-//         />
-//       ))
-//     ) : (
-//       <p>Loading</p>
-//     )}
-//   </div>
-// </section>

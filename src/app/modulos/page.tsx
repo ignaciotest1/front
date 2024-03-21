@@ -15,7 +15,7 @@ const Modulos = () => {
         <div className="flex flex-wrap gap-6 justify-center sm:justify-start">
           {modulos.map((modulo, i) => (
             <Link href={`/modulos/${modulo.link}`} key={i}>
-              <div className="w-56 h-48 text-slate-600  rounded-lg  bg-white hover:bg-slate-100 flex flex-col p-4 sombra transform hover:scale-105 transition duration-500 ease-in-out">
+              <div className="w-56 h-48 text-slate-300 hover:text-white  rounded-lg  bg-zinc-800 hover:bg-zinc-500 flex flex-col p-4 sombra transform hover:scale-105 transition duration-500 ease-in-out">
                 <p className="font-medium">{modulo.name}</p>
                 <span className="text-8xl font-extrabold">M1</span>
                 <p className="h-full flex items-end">Ver clases</p>
