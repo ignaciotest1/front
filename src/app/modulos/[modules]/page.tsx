@@ -29,8 +29,6 @@ const ModulesPage = ({ params }: { params: { modules: string } }) => {
     }
   };
 
-  console.log(complements);
-
   return (
     <div className="">
       <div className="flex gap-2 items-center">
