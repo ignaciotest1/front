@@ -17,6 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <Providers>
         <body className="max-w-[1200px] grid grid-cols-1 grid-rows-[auto,auto,1fr,auto] min-h-screen mx-auto px-4">
           <Header />

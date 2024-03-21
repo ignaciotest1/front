@@ -38,7 +38,7 @@ const userSlice = createSlice({
 export const { fetchUsersStart, fetchUsersSuccess, fetchUsersFailure } =
   userSlice.actions;
 
-export const fetchUsersAsync = () => async (dispatch: Dispatch) => {
+export const fetchUsersAsync = ():any => async (dispatch: Dispatch) => {
   try {
     dispatch(fetchUsersStart());
     const { data } = await axios.post("http://localhost:3000/api/getusers");
@@ -46,7 +46,7 @@ export const fetchUsersAsync = () => async (dispatch: Dispatch) => {
       throw new Error("Failed to fetch users");
     }
     dispatch(fetchUsersSuccess(data.users));
-  } catch (error) {
+  } catch (error: any) {
     dispatch(fetchUsersFailure(error.message));
   }
 };

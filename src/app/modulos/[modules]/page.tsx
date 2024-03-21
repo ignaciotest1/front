@@ -2,21 +2,11 @@ import CardClass from "@/components/CardClass";
 import Link from "next/link";
 import { modulos } from "../../../../utils/modulos";
 import Image from "next/image";
-// import PDF from "/icons/pdf.svg";
-// import EXCEL from "/icons/excel.svg";
-// import ARCHIVE from "/icons/archive.svg";
-// import IMAG from "/icons/imag.svg";
-
-// interface IClasses {
-//   id: string;
-//   name: string;
-//   src: string;
-//   video: boolean;
-// }
+import { Key } from "react";
 
 const ModulesPage = ({ params }: { params: { modules: string } }) => {
   const { modules } = params;
-  const classes =
+  const classes: any =
     modulos.find((modulo) => modulo.link === modules)?.classes || [];
 
   const complements =
@@ -48,15 +38,18 @@ const ModulesPage = ({ params }: { params: { modules: string } }) => {
         {/* <span className="font-normal capitalize">{params.modules}</span> */}
       </h2>
       {/* <h3 className="my-2 text-xl text-white">Clases:</h3> */}
-      <section className="flex flex-wrap gap-5 py-5justify-center items-center flex-col md:flex-row text-black my-5">
-        {classes.map((res) => (
-          <Link
-            key={res.name}
-            href={`/modulos/${params.modules}/clase_${res.id}`}
-          >
-            <CardClass name={res.name} image={res.image}></CardClass>
-          </Link>
-        ))}
+      <h3 className="my-2 text-xl text-white">Clases:</h3>
+      <section className="flex flex-wrap gap-5 py-5justify-center items-center flex-col md:flex-row text-black">
+        {classes.map(
+          (res: { name: Key | null | undefined; id: any; image: string }) => (
+            <Link
+              key={res.name}
+              href={`/modulos/${params.modules}/clase_${res.id}`}
+            >
+              <CardClass name={res.name} image={res.image}></CardClass>
+            </Link>
+          )
+        )}
       </section>
       {complements.length && (
         <section>

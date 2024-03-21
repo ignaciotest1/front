@@ -2,7 +2,6 @@ import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 import { connectMongoDb } from "@/app/lib/mongodb";
 import User from "@/models/User.model";
-import axios from "axios";
 
 const handler = NextAuth({
   providers: [
