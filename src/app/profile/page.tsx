@@ -30,14 +30,23 @@ const Profile = () => {
                 </p>
               </div>
               <div className="flex flex-col items-center justify-center">
-                <p className="text-lg font-bold">Status</p>
-                <p>
-                  {session.user.status === "initial"
-                    ? "Has ingresado correctamente, debes esperar a que te acepten"
-                    : session.user.status === "approved"
-                    ? "Has sido aceptado, podes ver el contenido"
-                    : "No has sido aceptado, tenes que esperar a que te acepten"}
-                </p>{" "}
+                {session.user.role === "admin" ? (
+                  <>
+                    <p className="text-lg font-bold">Status</p>
+                    <p>Admin</p>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-lg font-bold">Status</p>
+                    <p>
+                      {session.user.status === "initial"
+                        ? "Has ingresado correctamente, debes esperar a que te acepten"
+                        : session.user.status === "approved"
+                        ? "Has sido aceptado, podes ver el contenido"
+                        : "No has sido aceptado, tenes que esperar a que te acepten"}
+                    </p>
+                  </>
+                )}
               </div>
               <button
                 onClick={() => signOut()}
