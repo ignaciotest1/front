@@ -12,7 +12,7 @@ const handler = NextAuth({
     }),
   ],
   callbacks: {
-    async session({ user, token, session, trigger }) {
+    async session({ user, token, session }: any) {
       const { name, email, sub, picture } = token;
 
       try {
@@ -34,11 +34,12 @@ const handler = NextAuth({
           });
 
           if (res.ok) {
-            await axios.post(`http://localhost:3000/api/send-mail`, {
-              name,
-              email,
+            await fetch("http://localhost:3000/api/send-mail-admin", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
             });
-            await axios.post(`http://localhost:3000/api/send-mail-admin`);
             return user;
           }
         }
@@ -59,7 +60,7 @@ const handler = NextAuth({
       }
     },
   },
-  async jwt({ token, user, trigger, session }) {
+  async jwt({ token, user, trigger, session }: any) {
     if (trigger === "update") {
       return { ...token, ...session.user };
     }

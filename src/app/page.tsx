@@ -1,23 +1,10 @@
 "use client";
-import axios from "axios";
 import { getSession, signIn, useSession } from "next-auth/react";
 import ProtectedRoute from "./routeprotect";
 import Link from "next/link";
 
 export default function Home() {
   const { data: session } = useSession();
-  const user = "Juan";
-  const email = "juansegundomartinez7@gmail.com";
-
-  console.log(session, "session");
-
-  const handleSubmit = async () => {
-    try {
-      await axios.post(`http://localhost:3000/api/sendMailAdmin`);
-    } catch (e) {
-      console.log(e);
-    }
-  };
 
   return (
     <ProtectedRoute requiresAuth={false}>
