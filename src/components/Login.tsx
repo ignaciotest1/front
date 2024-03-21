@@ -6,7 +6,6 @@ import MenuHamburger from "./MenuHamburger";
 
 const Login = () => {
   const { data: session } = useSession();
-  const admin = true;
 
   return (
     <>
@@ -14,7 +13,7 @@ const Login = () => {
         <>
           <Link href="/profile" className="hidden md:block">
             <div className="flex flex-row gap-4 items-center">
-              {admin && (
+              {session.user.role === "admin" && (
                 <div className="px-6">
                   <Link href="/dashboard">
                     <button className="inline-block w-40 bg-black py-2 px-5 text-white rounded-xl hover:sombraGold transition duration-500 ease-in-out transform hover:scale-105">
@@ -41,7 +40,7 @@ const Login = () => {
             </div>
           </Link>
           <div className="block md:hidden">
-            <MenuHamburger admin={admin} />
+            <MenuHamburger admin={session.user.role === "admin"} />
           </div>
         </>
       ) : (
