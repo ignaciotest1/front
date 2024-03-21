@@ -59,13 +59,13 @@ const handler = NextAuth({
       }
     },
   },
-  async jwt({ token, user, trigger, session }: any) {
-    if (trigger === "update") {
-      return { ...token, ...session.user };
-    }
+  // async jwt({ trigger, token, session, user }:  ) {
+  //   if (trigger === "update") {
+  //     return { ...token, ...session.user };
+  //   }
 
-    return { token, user };
-  },
+  //   return { token, user };
+  // },
 });
 
 export { handler as GET, handler as POST };
