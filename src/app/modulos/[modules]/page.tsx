@@ -39,12 +39,12 @@ const ModulesPage = ({ params }: { params: { modules: string } }) => {
 
   return (
     <div className="">
-      <h2 className="font-medium text-2xl">
+      <h2 className="font-medium text-2xl text-white">
         Bienvenido al módulo sobre:{" "}
         <span className="font-normal capitalize">{params.modules}</span>
       </h2>
-      <h3 className="my-2 text-xl">Clases:</h3>
-      <section className="flex flex-wrap gap-5 py-5justify-center items-center flex-col md:flex-row">
+      <h3 className="my-2 text-xl text-white">Clases:</h3>
+      <section className="flex flex-wrap gap-5 py-5justify-center items-center flex-col md:flex-row text-black">
         {classes.map((res) => (
           <Link
             key={res.name}
@@ -55,11 +55,11 @@ const ModulesPage = ({ params }: { params: { modules: string } }) => {
         ))}
       </section>
       <section>
-        <h3 className="my-2 text-xl">Complementos:</h3>
+        <h3 className="my-2 text-xl text-white">Complementos:</h3>
         <div className="flex flex-wrap gap-3 justify-center md:justify-start">
           {complements.map((res, i) => (
             <a key={i} href={res.src} download>
-              <button className="bg-white hover:bg-slate-400 hover:text-white text-slate-800 font-bold py-10 px-10 rounded-xl transition duration-500 ease-in-out relative z-10">
+              <button className="bg-zinc-200 hover:bg-slate-400 hover:text-white text-slate-800 font-bold py-10 px-10 rounded-xl transition duration-500 ease-in-out relative z-10">
                 <Image
                   height={40}
                   width={40}
