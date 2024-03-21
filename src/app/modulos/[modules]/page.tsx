@@ -33,10 +33,18 @@ const ModulesPage = ({ params }: { params: { modules: string } }) => {
 
   return (
     <div className="">
-      <h2 className="font-medium text-2xl text-white">
-        Bienvenido al módulo {params.modules}
-        {/* <span className="font-normal capitalize">{params.modules}</span> */}
-      </h2>
+      <div className="flex gap-2 items-center">
+        <h2 className="font-medium text-2xl text-white">
+          Bienvenido al módulo {params.modules}
+          {/* <span className="font-normal capitalize">{params.modules}</span> */}
+        </h2>
+        <Image
+          src={`/imgs/${params.modules}.webp`}
+          alt="logo"
+          width={24}
+          height={24}
+        />
+      </div>
       {/* <h3 className="my-2 text-xl text-white">Clases:</h3> */}
       <h3 className="my-2 text-xl text-white">Clases:</h3>
       <section className="flex flex-wrap gap-5 py-5justify-center items-center flex-col md:flex-row text-black">
