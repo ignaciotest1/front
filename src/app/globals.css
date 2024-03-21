@@ -19,6 +19,8 @@
 
 body {
   background: #0f0f0f;
+  font-family: "Montserrat", sans-serif !important;
+  font-optical-sizing: auto;
 }
 
 ::-webkit-scrollbar {
@@ -30,10 +32,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #746ee7;
+  background-color: rgb(39 39 42);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #746ee7;
+  background-color: rgb(39 39 42);
 }

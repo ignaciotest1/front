@@ -1,16 +1,17 @@
 import Image from "next/image";
 
-const CardClass = ({ clase }: any) => {
+const CardClass = ({ name, image }: any) => {
   return (
-    <div className="h-[300px] w-[370px] bg-white rounded-3xl flex flex-col sombra">
+    <div className="h-[270px] w-[370px] bg-white rounded-3xl flex flex-col sombra">
       <Image
         height={300}
         width={370}
-        src="/imgs/imageEj.png"
+        src={image}
         alt="cover ejemplo"
+        className="rounded-t-3xl"
       />
-      <div className="flex w-full h-full justify-center items-center">
-        <p>{clase.name}</p>
+      <div className="flex w-full h-[120px] justify-center items-center text-lg font-bold">
+        <p>{name}</p>
       </div>
     </div>
   );

@@ -2,7 +2,6 @@ import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 import { connectMongoDb } from "@/app/lib/mongodb";
 import User from "@/models/User.model";
-import axios from "axios";
 
 const handler = NextAuth({
   providers: [
@@ -11,6 +10,7 @@ const handler = NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     }),
   ],
+  secret: process.env.SECRET,
   callbacks: {
     async session({ user, token, session }: any) {
       const { name, email, sub, picture } = token;
@@ -60,13 +60,13 @@ const handler = NextAuth({
       }
     },
   },
-  async jwt({ token, user, trigger, session }: any) {
-    if (trigger === "update") {
-      return { ...token, ...session.user };
-    }
+  // async jwt({ trigger, token, session, user }:  ) {
+  //   if (trigger === "update") {
+  //     return { ...token, ...session.user };
+  //   }
 
-    return { token, user };
-  },
+  //   return { token, user };
+  // },
 });
 
 export { handler as GET, handler as POST };
